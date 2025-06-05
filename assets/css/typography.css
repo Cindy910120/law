@@ -1,0 +1,1058 @@
+/* 統一字體規格 - Typography Standards */
+:root {
+  /* 字體大小標準 */
+  --font-size-xs: 0.75rem;   /* 12px - 極小文字 */
+  --font-size-sm: 0.875rem;  /* 14px - 小文字 */
+  --font-size-base: 1rem;    /* 16px - 基本文字 */
+  --font-size-md: 1.125rem;  /* 18px - 中等文字 */
+  --font-size-lg: 1.25rem;   /* 20px - 大文字 */
+  --font-size-xl: 1.5rem;    /* 24px - 超大文字 */
+  --font-size-2xl: 1.875rem; /* 30px - h3 標題 */
+  --font-size-3xl: 2.25rem;  /* 36px - h2 標題 */
+  --font-size-4xl: 3rem;     /* 48px - h1 標題 */
+  --font-size-5xl: 4rem;     /* 64px - 超大標題 */
+  
+  /* 行高標準 */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* 字重標準 */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* 字體家族 */
+  --font-family-base: "LXGW WenKai Mono TC", monospace;
+  --font-family-heading: "LXGW WenKai Mono TC", monospace;
+    /* 字體顏色主題 - 智能相近色調系統 */
+  --typography-primary: var(--tone-header-lighter, #1e293b);
+  --typography-secondary: var(--tone-header-light, #64748b);
+  --typography-accent: var(--tone-accent-light, #2563eb);
+  --typography-light: var(--theme-text-light, #ffffff);
+  --typography-muted: var(--tone-header-light, #94a3b8);
+  --typography-success: #059669;
+  --typography-warning: #d97706;
+  --typography-error: #dc2626;
+  
+  /* 互動狀態顏色 */
+  --typography-primary-hover: var(--typography-accent-hover, #3b82f6);
+  --typography-accent-hover: var(--tone-accent-dark, #1d4ed8);
+  --typography-selected: var(--typography-selected, #2563eb);
+  --typography-selected-bg: var(--typography-selected-bg, rgba(37, 99, 235, 0.15));
+  
+  /* 色調變化變量 */
+  --tone-lighter: var(--tone-header-lighter, #e2e8f0);
+  --tone-light: var(--tone-header-light, #cbd5e1);
+  --tone-base: var(--tone-header-base, #64748b);
+  --tone-dark: var(--tone-header-dark, #475569);
+  --tone-darker: var(--tone-header-darker, #334155);
+}
+
+/* 全局標題樣式 */
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  font-family: var(--font-family-heading);
+  color: var(--typography-primary);
+  transition: color 0.3s ease;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  font-family: var(--font-family-heading);
+  color: var(--typography-accent);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--theme-card, #f0f0f0);
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  font-family: var(--font-family-heading);
+  color: var(--typography-primary);
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--typography-accent);
+  padding-bottom: 10px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  font-family: var(--font-family-heading);
+  color: var(--typography-primary);
+  transition: color 0.3s ease;
+}
+
+/* 段落和文字樣式 */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  font-family: var(--font-family-base);
+  color: var(--typography-primary);
+  margin-bottom: 1rem;
+}
+
+/* 特殊文字樣式 */
+p1 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  font-family: var(--font-family-base);
+  color: var(--typography-secondary);
+}
+
+/* 按鈕基本樣式 */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+}
+
+.btn-primary:hover {
+  background: var(--tone-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--typography-accent);
+  border: 1px solid var(--typography-accent);
+}
+
+.btn-secondary:hover {
+  background: var(--tone-accent-lighter);
+  color: var(--tone-accent-darker);
+  border-color: var(--tone-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.2);
+}
+
+/* 輸入框樣式 */
+.input {
+  border: 2px solid var(--theme-card, #e6e6e6);
+  border-radius: 12px;
+  padding: 18px 24px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-family-base);
+  color: var(--typography-primary);
+  background: var(--theme-card);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--typography-accent);
+  box-shadow: 0 0 0 3px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.2);
+  background: var(--theme-card);
+  color: var(--typography-primary);
+}
+
+.input::placeholder {
+  color: var(--typography-muted);
+}
+
+/* 卡片樣式 */
+.card {
+  background: var(--theme-card, #f9f9f9);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
+  border: 1px solid #eaeaea;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 文字樣式類別 */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+
+/* 字重類別 */
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* 行高類別 */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+
+/* 響應式字體大小 */
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 2rem;     /* h1 在手機上較小 */
+    --font-size-3xl: 1.5rem;   /* h2 在手機上較小 */
+    --font-size-2xl: 1.25rem;  /* h3 在手機上較小 */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-4xl: 1.75rem;  /* h1 在小手機上更小 */
+    --font-size-3xl: 1.25rem;  /* h2 在小手機上更小 */
+  }
+}
+
+/* 語義化字體類別 */
+/* Footer 標題 */
+.footer-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-light);
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.7rem;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--typography-accent);
+}
+
+/* Footer 內容文字 */
+.footer-text {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--typography-light);
+  margin-bottom: 0.5rem;
+}
+
+/* Footer 連結 */
+.footer-link {
+  color: var(--typography-accent);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--typography-light);
+  text-decoration: underline;
+}
+
+/* Footer 版權文字 */
+.footer-copyright {
+  font-size: var(--font-size-md);
+  color: var(--typography-light);
+  text-align: center;
+}
+
+/* 卡片標題 */
+.card-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-primary);
+  margin-bottom: 1rem;
+}
+
+/* 卡片副標題 */
+.card-subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--typography-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* 描述文字 */
+.description-text {
+  font-size: var(--font-size-lg);
+  color: var(--typography-light);
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 按鈕文字 */
+.btn-text-lg {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 導航連結 */
+.nav-link {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--typography-light);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0.7rem;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--tone-accent-lighter);
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.3);
+}
+
+.nav-link.router-link-active {
+  font-weight: 900;
+  color: var(--tone-accent-lighter);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link.router-link-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: var(--tone-accent-lighter);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.4);
+}
+
+/* 導航標題 */
+.nav-title {
+  font-size: var(--font-size-3xl);
+  color: var(--typography-light);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+  margin: 0;
+  text-align: left;
+}
+
+/* 調色盤標題 */
+.palette-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-primary);
+  margin: 0 0 1rem 0;
+}
+
+/* 主題名稱 */
+.theme-name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--typography-primary);
+  text-align: center;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* 搜尋相關類別 */
+.search-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.search-query-highlight {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--typography-accent);
+  transition: color 0.3s ease;
+}
+
+.no-results-text {
+  font-size: var(--font-size-lg);
+  color: var(--typography-secondary);
+  text-align: center;
+  margin: 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.result-item-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-accent);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.result-item-title:hover {
+  color: var(--tone-accent-dark);
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.2);
+}
+
+.result-item-content {
+  font-size: var(--font-size-base);
+  color: var(--typography-primary);
+  line-height: var(--line-height-relaxed);
+  transition: color 0.3s ease;
+}
+
+.category-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--typography-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--typography-accent);
+  border-radius: 2px;
+}
+
+.data-item-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-primary);
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.data-item-content {
+  font-size: var(--font-size-base);
+  color: var(--typography-secondary);
+  line-height: var(--line-height-normal);
+  transition: color 0.3s ease;
+}
+
+/* 法條列表項目 */
+.law-list-item {
+  font-size: var(--font-size-base);
+  color: var(--typography-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  background: var(--theme-card);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.law-list-item:hover {
+  background: var(--tone-accent-lighter);
+  color: var(--tone-accent-darker);
+  transform: translateX(8px);
+  box-shadow: 0 3px 8px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.15);
+  border-color: var(--tone-accent-light);
+}
+
+.law-list-item.active {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+  font-weight: var(--font-weight-semibold);
+  border-color: var(--tone-accent-dark);
+  box-shadow: 0 2px 5px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.25);
+}
+
+/* 文章內容文字 */
+.article-content-text {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--typography-primary);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.article-content-text strong {
+  color: var(--typography-accent);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* 範例標題 */
+.example-title-text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--typography-accent);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.example-title-text::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--typography-accent);
+  font-size: var(--font-size-sm);
+}
+
+/* 範例內容 */
+.example-content-text {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: var(--typography-secondary);
+  transition: color 0.3s ease;
+  padding-left: 1rem;
+  border-left: 3px solid var(--theme-card);
+}
+
+/* 空狀態文字 */
+.empty-state-text {
+  font-size: var(--font-size-lg);
+  color: var(--typography-secondary);
+  text-align: center;
+  margin: 2rem 0;
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}
+
+/* 高亮文字樣式 */
+.highlight-text {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+/* 標籤樣式 */
+.tag {
+  display: inline-block;
+  background: var(--theme-card);
+  color: var(--typography-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  border: 1px solid var(--typography-muted);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: var(--tone-accent-lighter);
+  color: var(--tone-accent-darker);
+  border-color: var(--tone-accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.2);
+}
+
+/* 主題適配的字體顏色類別 */
+.text-primary {
+  color: var(--typography-primary);
+  transition: color 0.3s ease;
+}
+
+.text-secondary {
+  color: var(--typography-secondary);
+  transition: color 0.3s ease;
+}
+
+.text-accent {
+  color: var(--typography-accent);
+  transition: color 0.3s ease;
+}
+
+.text-light {
+  color: var(--typography-light);
+  transition: color 0.3s ease;
+}
+
+.text-muted {
+  color: var(--typography-muted);
+  transition: color 0.3s ease;
+}
+
+.text-success {
+  color: var(--typography-success);
+  transition: color 0.3s ease;
+}
+
+.text-warning {
+  color: var(--typography-warning);
+  transition: color 0.3s ease;
+}
+
+.text-error {
+  color: var(--typography-error);
+  transition: color 0.3s ease;
+}
+
+/* 互動式文字效果 */
+.text-hover-accent {
+  transition: all 0.3s ease;
+}
+
+.text-hover-accent:hover {
+  color: var(--tone-accent-light);
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.3);
+}
+
+.text-hover-primary {
+  transition: all 0.3s ease;
+}
+
+.text-hover-primary:hover {
+  color: var(--tone-lighter);
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(var(--tone-header-light-rgb, 129, 150, 244), 0.3);
+}
+
+/* 漸層文字效果 */
+.text-gradient {
+  background: linear-gradient(135deg, var(--tone-accent-light), var(--tone-header-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-bold);
+  position: relative;
+}
+
+.text-gradient:hover {
+  background: linear-gradient(135deg, var(--tone-accent-base), var(--tone-header-base));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 特殊強調文字 */
+.text-emphasis {
+  color: var(--tone-accent-dark);
+  font-weight: var(--font-weight-semibold);
+  position: relative;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(var(--tone-accent-lighter-rgb, 196, 181, 253), 0.3);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--tone-accent-light-rgb, 167, 139, 250), 0.4);
+}
+
+.text-emphasis:hover {
+  background: rgba(var(--tone-accent-light-rgb, 167, 139, 250), 0.4);
+  color: var(--tone-accent-darker);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(var(--tone-accent-light-rgb, 167, 139, 250), 0.3);
+}
+
+/* 引用文字樣式 */
+.quote-text {
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  color: var(--typography-secondary);
+  position: relative;
+  padding-left: 2rem;
+  margin: 1.5rem 0;
+  line-height: var(--line-height-relaxed);
+}
+
+.quote-text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+  font-size: var(--font-size-4xl);
+  color: var(--typography-accent);
+  opacity: 0.3;
+  font-family: serif;
+}
+
+/* 程式碼文字 */
+.code-text {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background: var(--theme-card);
+  color: var(--typography-accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--typography-muted);
+}
+
+/* 通知文字樣式 */
+.notification-text {
+  font-size: var(--font-size-sm);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.notification-text.info {
+  background: rgba(var(--theme-accent-rgb, 37, 99, 235), 0.1);
+  border-left-color: var(--typography-accent);
+  color: var(--typography-primary);
+}
+
+.notification-text.success {
+  background: rgba(5, 150, 105, 0.1);
+  border-left-color: var(--typography-success);
+  color: var(--typography-primary);
+}
+
+.notification-text.warning {
+  background: rgba(217, 119, 6, 0.1);
+  border-left-color: var(--typography-warning);
+  color: var(--typography-primary);
+}
+
+.notification-text.error {
+  background: rgba(220, 38, 38, 0.1);
+  border-left-color: var(--typography-error);
+  color: var(--typography-primary);
+}
+
+/* 載入動畫文字 */
+.loading-text {
+  color: var(--typography-secondary);
+  position: relative;
+}
+
+.loading-text::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* 搜尋結果高亮 */
+.search-highlight {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* 麵包屑導航 */
+.breadcrumb-text {
+  font-size: var(--font-size-sm);
+  color: var(--typography-secondary);
+}
+
+.breadcrumb-link {
+  color: var(--typography-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--tone-accent-dark);
+  text-decoration: underline;
+  text-shadow: 0 1px 2px rgba(var(--tone-accent-light-rgb, 59, 130, 246), 0.2);
+}
+
+.breadcrumb-separator {
+  color: var(--typography-muted);
+  margin: 0 0.5rem;
+}
+
+/* 統計數字文字 */
+.stat-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--typography-accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--typography-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 時間戳記文字 */
+.timestamp-text {
+  font-size: var(--font-size-xs);
+  color: var(--typography-muted);
+  font-style: italic;
+}
+
+/* 版本號文字 */
+.version-text {
+  font-size: var(--font-size-xs);
+  color: var(--typography-muted);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  background: var(--theme-card);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* 響應式文字隱藏/顯示 */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .text-mobile-center {
+    text-align: center;
+  }
+  
+  .text-mobile-sm {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* 文字選擇樣式 */
+::selection {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+}
+
+::-moz-selection {
+  background: var(--typography-accent);
+  color: var(--typography-light);
+}
+
+/* 平滑滾動和焦點樣式 */
+* {
+  scroll-behavior: smooth;
+}
+
+*:focus {
+  outline: 2px solid var(--typography-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* 無障礙文字樣式 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 文字陰影效果 */
+.text-shadow-light {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-medium {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-strong {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 打字機效果 */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid var(--typography-accent);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--typography-accent); }
+}
+
+/* 選中和焦點狀態樣式 */
+.text-selected {
+  background: var(--typography-selected-bg);
+  color: var(--typography-selected);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  border: 1px solid rgba(var(--tone-accent-light-rgb, 167, 139, 250), 0.3);
+}
+
+.text-focus {
+  outline: 2px solid var(--tone-accent-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+  background: rgba(var(--tone-accent-lighter-rgb, 196, 181, 253), 0.1);
+}
+
+/* 狀態指示器 */
+.status-active {
+  color: var(--tone-accent-base);
+  position: relative;
+}
+
+.status-active::before {
+  content: '●';
+  color: var(--tone-accent-light);
+  margin-right: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.status-inactive {
+  color: var(--tone-light);
+  opacity: 0.7;
+}
+
+.status-pending {
+  color: var(--typography-warning);
+  position: relative;
+}
+
+.status-pending::before {
+  content: '◐';
+  margin-right: 0.5rem;
+  animation: spin 2s linear infinite;
+}
+
+/* 動態效果 */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 主題色調展示類別 */
+.tone-showcase {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tone-sample {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  transition: transform 0.3s ease;
+}
+
+.tone-sample:hover {
+  transform: scale(1.1);
+}
+
+.tone-sample.lighter {
+  background: var(--tone-lighter);
+  color: var(--tone-darker);
+}
+
+.tone-sample.light {
+  background: var(--tone-light);
+  color: var(--tone-darker);
+}
+
+.tone-sample.base {
+  background: var(--tone-base);
+  color: var(--typography-light);
+}
+
+.tone-sample.dark {
+  background: var(--tone-dark);
+  color: var(--typography-light);
+}
+
+.tone-sample.darker {
+  background: var(--tone-darker);
+  color: var(--typography-light);
+}
+
+/* 色彩和諧文字效果 */
+.harmonious-text {
+  color: var(--tone-light);
+  background: linear-gradient(90deg, 
+    rgba(var(--tone-lighter-rgb, 226, 232, 240), 0.1) 0%,
+    rgba(var(--tone-light-rgb, 203, 213, 225), 0.2) 50%,
+    rgba(var(--tone-lighter-rgb, 226, 232, 240), 0.1) 100%
+  );
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--tone-accent-light);
+  transition: all 0.3s ease;
+}
+
+.harmonious-text:hover {
+  background: linear-gradient(90deg, 
+    rgba(var(--tone-light-rgb, 203, 213, 225), 0.2) 0%,
+    rgba(var(--tone-base-rgb, 100, 116, 139), 0.3) 50%,
+    rgba(var(--tone-light-rgb, 203, 213, 225), 0.2) 100%
+  );
+  border-left-color: var(--tone-accent-base);
+  transform: translateX(4px);
+}
+
+/* 層次感文字系統 */
+.text-primary-tone { color: var(--tone-darker); }
+.text-secondary-tone { color: var(--tone-dark); }
+.text-tertiary-tone { color: var(--tone-base); }
+.text-quaternary-tone { color: var(--tone-light); }
+.text-quinary-tone { color: var(--tone-lighter); }
+
+/* 深度感效果 */
+.text-depth {
+  color: var(--tone-base);
+  text-shadow: 
+    1px 1px 0 var(--tone-light),
+    2px 2px 0 var(--tone-lighter),
+    3px 3px 4px rgba(var(--tone-dark-rgb, 71, 85, 105), 0.3);
+  transition: all 0.3s ease;
+}
+
+.text-depth:hover {
+  transform: translateY(-2px);
+  text-shadow: 
+    2px 2px 0 var(--tone-light),
+    4px 4px 0 var(--tone-lighter),
+    6px 6px 8px rgba(var(--tone-dark-rgb, 71, 85, 105), 0.4);
+}
