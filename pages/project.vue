@@ -416,7 +416,7 @@ h1 {
   background: var(--theme-card, #f8f9fa);
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   border-left: 4px solid var(--theme-accent, #3498db);
   transition: all 0.3s ease;
   position: relative;
@@ -515,8 +515,8 @@ h1 {
 .law-sections {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-  row-gap: 50px;
+  gap: 45px;
+  row-gap: 65px;
   margin-top: 50px;
   justify-content: center;
   padding: 0 15px;
@@ -524,7 +524,7 @@ h1 {
 
 .law-section-card {
   /* 使用通用卡片樣式 */
-  margin: 25px 15px;
+  margin: 30px 20px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -656,10 +656,9 @@ h1 {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-@media (max-width: 768px) {
-  .law-sections {
+@media (max-width: 768px) {  .law-sections {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 35px;
     padding: 0 10px;
   }
   
@@ -677,10 +676,9 @@ h1 {
     font-size: var(--font-size-3xl);
     margin-bottom: 1.5rem;
   }
-
   .law-section-card {
     padding: 25px;
-    margin: 10px;
+    margin: 15px;
     min-height: 250px;
   }
 

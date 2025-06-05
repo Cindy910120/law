@@ -209,7 +209,7 @@ const getExamples = (article: LawArticle, contentKey: string): string[] | undefi
 
 .law-list li {
   padding: 12px 15px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -298,7 +298,7 @@ const getExamples = (article: LawArticle, contentKey: string): string[] | undefi
 
 /* Content section樣式 */
 .content-section {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .content-section .article-text {
@@ -325,8 +325,8 @@ const getExamples = (article: LawArticle, contentKey: string): string[] | undefi
 }
 
 .content-example {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 25px;
   padding: 20px;
   background: var(--theme-card, #f0f8ff);
   border-radius: 8px;
@@ -337,7 +337,7 @@ const getExamples = (article: LawArticle, contentKey: string): string[] | undefi
 
 .content-example .example {
   background-color: transparent;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   padding: 0;
   border: none;
 }

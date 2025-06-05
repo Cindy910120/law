@@ -140,7 +140,7 @@ useHead({
 }
 
 .demo-section {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding: 2rem;
   background: var(--theme-card);
   border-radius: 12px;
@@ -156,28 +156,28 @@ useHead({
 }
 
 .text-hierarchy > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .interactive-demo {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .status-demo {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .effects-demo > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .notification-demo > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .usage-info > * {

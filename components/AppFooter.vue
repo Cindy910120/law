@@ -29,11 +29,10 @@
 .footer {
   width: 100%;
   background: var(--theme-footer, #f8f9fa);
-  color: var(--theme-text, #333);
-  padding: 2.5rem 0 0 0;
+  color: var(--theme-text, #333);  padding: 2.5rem 0 0 0;
   margin-top: 3rem;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  font-family: "LXGW WenKai Mono TC", monospace;
+  font-family: var(--font-family-base);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -60,7 +59,7 @@
 }
 
 .footer-section ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-bottom {

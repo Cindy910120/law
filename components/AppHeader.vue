@@ -84,7 +84,7 @@ onUnmounted(() => {
   background: var(--theme-header, #ffffff);
   padding: 1.6rem 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  font-family: "LXGW WenKai Mono TC", monospace;
+  font-family: var(--font-family-base);
   transition: background 0.3s ease;
 }
 
@@ -187,7 +187,7 @@ li {
 .palette-header h3 {
   margin: 0;
   font-size: var(--font-size-lg);
-  font-family: "LXGW WenKai Mono TC", monospace;
+  font-family: var(--font-family-base);
   color: var(--theme-text-light, #ffffff);
 }
 
@@ -213,8 +213,8 @@ li {
 .color-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 20px;
+  gap: 20px;
+  padding: 25px;
 }
 
 .color-option {
@@ -266,7 +266,7 @@ li {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--theme-text, #2c3e50);
-  font-family: "LXGW WenKai Mono TC", monospace;
+  font-family: var(--font-family-base);
   text-align: center;
   display: block;
   transition: color 0.3s ease;

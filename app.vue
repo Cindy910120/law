@@ -25,7 +25,7 @@ onMounted(() => {
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "LXGW WenKai Mono TC", monospace;
+  font-family: var(--font-family-base);
   line-height: 1.6;
   min-height: 100vh;
 }

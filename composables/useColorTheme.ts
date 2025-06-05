@@ -179,7 +179,32 @@ export function useColorTheme() {  // 應用主題到文檔
           ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}`
           : '0, 0, 0'
       }
-        // 輔助函數：調整顏色亮度
+      
+      // 創建動態背景漸層
+      const createDynamicGradient = (theme: typeof colorThemes[0]) => {
+        return `
+          linear-gradient(
+            135deg,
+            ${theme.header}15 0%,
+            ${theme.accent}20 25%,
+            ${theme.footer}25 50%,
+            ${theme.header}30 75%,
+            ${theme.accent}15 100%
+          ),
+          radial-gradient(
+            ellipse at top left,
+            ${theme.accent}25 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at bottom right,
+            ${theme.header}20 0%,
+            transparent 50%
+          )
+        `
+      }
+      
+      // 輔助函數：調整顏色亮度
       const adjustBrightness = (hex: string, percent: number) => {
         if (hex.includes('gradient')) return hex
         
@@ -260,27 +285,17 @@ export function useColorTheme() {  // 應用主題到文檔
       root.style.setProperty('--tone-text-on-dark', isHeaderLight ? theme.text : theme.textLight)
       root.style.setProperty('--tone-text-on-light', isHeaderLight ? theme.textLight : theme.text)
       
-      // 設置RGB值變量 (用於半透明效果)
-      if (!theme.accent.includes('gradient')) {
-        root.style.setProperty('--theme-accent-rgb', hexToRgb(theme.accent))
-        root.style.setProperty('--tone-accent-light-rgb', hexToRgb(accentTones.light))
-        root.style.setProperty('--tone-accent-lighter-rgb', hexToRgb(accentTones.lighter))
-      } else {
-        root.style.setProperty('--theme-accent-rgb', '139, 92, 246')
-        root.style.setProperty('--tone-accent-light-rgb', '167, 139, 250')
-        root.style.setProperty('--tone-accent-lighter-rgb', '196, 181, 253')
-      }
+      // 設置RGB變量用於半透明效果
+      root.style.setProperty('--theme-header-rgb', hexToRgb(theme.header))
+      root.style.setProperty('--theme-footer-rgb', hexToRgb(theme.footer))
+      root.style.setProperty('--theme-accent-rgb', hexToRgb(theme.accent))
       
-      if (!theme.header.includes('gradient')) {
-        root.style.setProperty('--theme-header-rgb', hexToRgb(theme.header))
-        root.style.setProperty('--tone-header-light-rgb', hexToRgb(headerTones.light))
-        root.style.setProperty('--tone-header-lighter-rgb', hexToRgb(headerTones.lighter))
-      } else {
-        root.style.setProperty('--theme-header-rgb', '102, 126, 234')
-        root.style.setProperty('--tone-header-light-rgb', '129, 150, 244')
-        root.style.setProperty('--tone-header-lighter-rgb', '165, 180, 252')
-      }
-      
+      // 設置動態背景變量
+      root.style.setProperty('--dynamic-bg-gradient', createDynamicGradient(theme))
+      root.style.setProperty('--theme-primary-alpha', `${theme.header}40`)
+      root.style.setProperty('--theme-accent-alpha', `${theme.accent}30`)
+      root.style.setProperty('--theme-footer-alpha', `${theme.footer}20`)
+
       // 動態計算背景亮度並設置智能文字顏色
       const getSmartTextColors = (bgColor: string, cardColor: string) => {
         const getBrightness = (color: string) => {
