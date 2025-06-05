@@ -245,7 +245,7 @@
     <!-- 參考資料 -->
     <div class="reference-section">
       <h3>參考資料</h3>
-      <p>本頁面內容參考自：</p>
+      <p>此網頁2025/6/5修改，本頁面內容參考自：</p>
       <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=N0030001" target="_blank" rel="noopener noreferrer" class="reference-link">
         法務部全國法規資料庫 - 勞動基準法
       </a>
