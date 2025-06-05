@@ -516,7 +516,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 35px;
-  row-gap: 80px;
+  row-gap: 50px;
   margin-top: 50px;
   justify-content: center;
   padding: 0 15px;
@@ -578,7 +578,7 @@ h1 {
   background-color: rgba(100, 116, 139, 0.05);
   border-left: 5px solid var(--theme-accent, #64748b);
   grid-column: 1 / -1;
-  margin: 80px 15px 40px 15px;
+  margin: 60px 15px 120px 15px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -609,13 +609,14 @@ h1 {
 
 /* 參考資料樣式 */
 .reference-section {
-  margin-top: 80px;
+  margin-top: 120px;
   padding: 35px;
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   border-radius: 12px;
   border-left: 4px solid #6c757d;
   text-align: center;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  clear: both;
 }
 
 .reference-section h3 {
@@ -717,10 +718,8 @@ h1 {
 
   .relevance-score {
     align-self: flex-end;
-  }
-
-  .reference-section {
-    margin-top: 40px;
+  }  .reference-section {
+    margin-top: 80px;
     padding: 25px;
   }
     .reference-section h3 {
@@ -733,7 +732,7 @@ h1 {
   }
 
   .special-section {
-    margin: 30px 10px 15px 10px;
+    margin: 40px 10px 60px 10px;
   }
 }
 
@@ -747,6 +746,13 @@ h1 {
 
   h2 {
     font-size: var(--font-size-xl);
+  }
+  .special-section {
+    margin: 30px 10px 60px 10px;
+  }
+  
+  .reference-section {
+    margin-top: 60px;
   }
 
   .special-section::before {
