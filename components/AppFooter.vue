@@ -8,7 +8,7 @@
       <div class="footer-section">
         <h3 class="footer-title">聯絡資訊</h3>
         <p class="footer-text">電子郵件：cindyjuliacoco@gmail.com</p>
-        <p class="footer-text">個人網站：<a href="" target="_blank" class="footer-link">林芊蓉的個人網站</a></p>
+        <p class="footer-text">個人網站：<a href="https://introdution.vercel.app/" target="_blank" class="footer-link">林芊蓉的個人網站</a></p>
       </div>
 
       <div class="footer-section">
