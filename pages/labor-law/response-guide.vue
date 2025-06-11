@@ -33,12 +33,10 @@
         <a href="#legal" class="nav-button legal">⚖️ 法律權益</a>
         <a href="#support" class="nav-button support">🤝 心理支持</a>
       </div>
-    </div>
-
-    <!-- 緊急處理區域 -->
+    </div>    <!-- 緊急處理區域 -->
     <div id="emergency" class="emergency-section">
       <div class="section-header">
-        <div class="section-icon">⚠️</div>
+        <div class="section-icon emergency-icon">🚨</div>
         <div class="section-info">
           <h2 class="section-title">緊急處理</h2>
           <p class="section-subtitle">遇到性騷擾當下的立即行動</p>
@@ -1042,13 +1040,23 @@ onMounted(() => {
   font-size: var(--font-size-4xl, 2.25rem);
   font-weight: var(--font-weight-bold, 700);
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-lg, 1.125rem);
+  font-size: var(--font-size-xl, 1.25rem);
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: white;
+  opacity: 1;
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.7),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  font-weight: var(--font-weight-medium, 500);
 }
 
 .hero-stats {
@@ -1060,23 +1068,35 @@ onMounted(() => {
 
 .stat-item {
   text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .stat-number {
   display: block;
-  font-size: var(--font-size-2xl, 1.5rem);
+  font-size: var(--font-size-3xl, 1.875rem);
   font-weight: var(--font-weight-bold, 700);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+  text-shadow: none;
 }
 
 .stat-label {
-  font-size: var(--font-size-sm, 0.875rem);
-  opacity: 0.8;
+  font-size: var(--font-size-base, 1rem);
+  color: #374151;
+  font-weight: var(--font-weight-medium, 500);
+  opacity: 1;
 }
 
 /* 快速導航 */
@@ -1164,6 +1184,14 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.emergency-icon {
+  background: white !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .section-info {
