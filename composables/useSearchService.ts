@@ -14,6 +14,8 @@ import { ruleArticles } from '~/data/work-rules'
 import { supervisionArticles } from '~/data/supervision'
 import { penaltyArticles } from '~/data/penalty'
 import { supplementaryArticles } from '~/data/supplementary'
+import { GenderEqualityWorkLawArticles } from '~/data/gender-equality-work-law'
+import { HarassmentPreventionLawArticles } from '~/data/harassment-prevention-law'
 
 // 定義法條介面
 export interface LawArticle {
@@ -67,7 +69,9 @@ const chapterMapping = {
   workRules: { name: '工作規則', path: '/labor-law/work-rules', articles: ruleArticles },
   supervision: { name: '監督與檢查', path: '/labor-law/supervision', articles: supervisionArticles },
   penalty: { name: '罰則', path: '/labor-law/penalty', articles: penaltyArticles },
-  supplementary: { name: '附則', path: '/labor-law/supplementary', articles: supplementaryArticles }
+  supplementary: { name: '附則', path: '/labor-law/supplementary', articles: supplementaryArticles },
+  genderEqualityWork: { name: '性別平等工作法', path: '/labor-law/gender-equality-work-law', articles: GenderEqualityWorkLawArticles },
+  harassmentPrevention: { name: '性騷擾防治法', path: '/labor-law/harassment-prevention-law', articles: HarassmentPreventionLawArticles }
 }
 
 export const useSearchService = () => {
