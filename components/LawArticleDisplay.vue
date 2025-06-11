@@ -1,8 +1,8 @@
 <template>
   <div class="law-details-page">
-    <h1>{{ pageTitle }}</h1>
+    <h1 v-if="showTitle">{{ pageTitle }}</h1>
     
-    <div class="law-content-container">      <!-- 左側法條列表 -->
+    <div class="law-content-container"><!-- 左側法條列表 -->
       <div class="law-list">
         <h2 class="category-title">法條列表</h2>
         <ul>
@@ -54,9 +54,10 @@
         </div>
       </div>
     </div>
-    
-    <div class="back-button-container">
-      <NuxtLink to="/project" class="back-button">返回勞基法小學堂</NuxtLink>
+      <div class="back-button-container">
+      <slot name="back-button">
+        <NuxtLink to="/project" class="back-button">返回勞基法小學堂</NuxtLink>
+      </slot>
     </div>
   </div>
 </template>
@@ -75,9 +76,12 @@ interface LawArticle {
 interface Props {
   pageTitle: string;
   articles: LawArticle[];
+  showTitle?: boolean;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  showTitle: true
+});
 const route = useRoute();
 
 // 響應式狀態
