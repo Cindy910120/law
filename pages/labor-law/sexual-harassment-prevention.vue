@@ -145,14 +145,23 @@
   font-size: var(--font-size-4xl, 2.25rem);
   font-weight: var(--font-weight-bold, 700);
   margin: 0 0 1rem 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .page-subtitle {
   font-size: var(--font-size-lg, 1.125rem);
-  opacity: 0.9;
+  opacity: 1;
   margin: 0;
+  color: white;
   font-weight: var(--font-weight-medium, 500);
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.7),
+    0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* 區塊標題 */

@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copyright">&copy; {{ new Date().getFullYear() }} 林芊蓉. 版權所有。</p>
+      <p class="footer-copyright">&copy; {{ new Date().getFullYear() }} 林芊蓉. 版權所有。此網頁舉例皆為AI所列，若有錯誤，請糾正指教。</p>
     </div>
   </footer>
 </template>

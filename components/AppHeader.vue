@@ -7,6 +7,7 @@
         <ul>
           <li><NuxtLink to="/" class="nav-link">首頁</NuxtLink></li>
           <li><NuxtLink to="/project" class="nav-link">總覽</NuxtLink></li>
+          <li><NuxtLink to="/labor-law/sexual-harassment-prevention" class="nav-link">性騷擾專區</NuxtLink></li>
         </ul>
       </nav>
       
